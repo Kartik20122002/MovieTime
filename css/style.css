@@ -157,7 +157,7 @@ header .search-bar-container{
     position: absolute;
     top: 100%; left: 0; right: 0;
     padding: 1.5rem 2rem;
-    background-color: #333;
+    background-color: #0707074a;
     border-top: .1rem solid rgba(255, 255, 255, 0.2);
     display: flex;
     align-items: center;
