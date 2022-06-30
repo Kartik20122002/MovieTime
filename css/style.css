@@ -363,6 +363,15 @@ header .search-bar-container label:hover{
     object-fit: cover;
 }
 
+.home .video-container img{
+    position: absolute;
+    top: 0; left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
 .book .row{
     display: flex;
     flex-wrap: wrap;
