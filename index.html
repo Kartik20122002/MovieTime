@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookMyMovie</title>
+
+    <!-- font -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <!-- custom css -->
+    <link rel="stylesheet" href="css/style.css">
+ k
+</head>
+<body>
+
+    <header>
+       
+        <div id="menu-bar" class="fa-solid fa-bars"> </div>
+
+       <a href="#" class="logo"><span>M</span>ovies</a>
+
+       <nav class="navbar">
+        <a href="#home">Home</a> 
+        <a href="#book">Book Show</a>
+        <a href="#upcoming">Upcoming Movies</a>
+        <a href="#topmovies">Top Movies</a>
+        <a href="#services">Services</a>
+        <a href="#contact">Contact Us</a>
+       </nav>
+    
+   
+    <div class="icons">
+        <i class="fas fa-search" id="search-btn"></i>
+        <i class="fas fa-user" id="login-btn"></i>
+    </div>
+
+    <form action="" class="search-bar-container">
+        <input type="search" id="search-bar" placeholder="search here...">
+        <label for="" class="fas fa-search"></label>
+    </form>
+
+</header>
+
+    
+<div class="login-form-container">  
+
+    <i class="fa-solid fa-xmark" id="form-close"></i>
+
+    <form action="">
+        <h3>login</h3>
+        <input type="email" class="box" placeholder="Enter your email">
+        <input type="password" class="box" placeholder="Enter your password">
+        <input type="submit" class="btn" value="login now">
+        <input type="checkbox" id="remember">
+        <label for="remember">remember me</label>
+        <p><a href="#">forget password ?</a></p>
+        <p>Don't have and account ? <a href="#">register now</a></p>
+    </form>
+</div>
+
+<section class="home" id="home">
+
+<div class="content">
+    <h3>Book Your Show Now</h3>
+    <p>Experience Quality Cinema With Us</p>
+    <a href="#book" class="btn">Book Now</a>
+</div>
+
+<div class="controls">
+    <span class="vid-btn" data-src="images and videos/video1"></span>
+</div>
+
+<div class="video-container">
+    <video src="images and videos/video1.mp4" id="video-slider" loop autoplay muted></video>
+</div>
+
+</section>
+
+<section class="book" id="book">
+    <h1 class="heading">
+        <span>b</span>
+        <span>o</span>
+        <span>o</span>
+        <span>k</span>
+        <span class="space"></span>
+        <span>t</span>
+        <span>i</span>
+        <span>c</span>
+        <span>k</span>
+        <span>e</span>
+        <span>t</span>
+    </h1>
+
+    <div class="row">
+        <div class="image">
+            <img src="Images and Videos/online-movie-ticket.png" alt="Image">
+        </div>
+
+        <form action="">
+            <div class="inputBox">
+                <h3>Movie Name</h3>
+                <input type="text" placeholder="Movie Name">
+            </div>
+            <div class="inputBox">
+                <h3>How Many Tickets :</h3>
+                <div class="design">
+                    <span id="rangeValue" style="display:inline;">0</span>
+                    <span id="ticket">Tickets</span>
+                    <Input class="range" type="range" name="" value="0" min="0" max="10" onChange="rangeSlide(this.value)" onmousemove="rangeSlide(this.value)"></Input>
+                </div>
+
+            </div>
+            <div class="inputBox">
+                <h3>Date</h3>
+                <input type="date">
+            </div>
+            <div class="it">
+            <input type="submit" class="btn" value="book now">
+            </div>
+        </form>
+    </div>
+</section>
+
+<section class="upcoming" id="upcoming">
+    <h1 class="heading">
+        <span>u</span>
+        <span>p</span>
+        <span>c</span>
+        <span>o</span>
+        <span>m</span>
+        <span>i</span>
+        <span>n</span>
+        <span>g</span>
+        <span class="space"></span>
+        <span>m</span>
+        <span>o</span>
+        <span>v</span>
+        <span>i</span>
+        <span>e</span>
+        <span>s</span>
+    </h1>
+ 
+    <div class="box-container">
+        <div class="box">
+            <img src="Images and Videos/umovie1.jpg" alt="image">
+            <div class="content">
+                <h3>Avatar 2</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, cum!</p>
+                <div class="price">10$</div>
+            </div>
+            <div class="it">
+           <a href="#book" class="btn">Book Now</a>
+        </div>
+        </div>
+        <div class="box">
+            <img src="Images and Videos/umovie2.jpg" alt="image">
+            <div class="content">
+                <h3>Bhramastra</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, cum!</p>
+                <div class="price">10$</div>
+            </div>
+            <div class="it">
+                <a href="#book" class="btn">Book Now</a>
+             </div>
+        </div>
+        <div class="box">
+            <img src="Images and Videos/umovie3.jpg" alt="image">
+            <div class="content">
+                <h3>Wakanda: Forever</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Amet, cum!</p>
+                <div class="price">10$</div>
+            </div>
+            <div class="it">
+                <a href="#book" class="btn">Book Now</a>
+             </div>
+        </div>
+    </div>
+</section>
+
+<section class="topmovies" id="topmovies">
+    <h1 class="heading">
+        <span>t</span>
+        <span>o</span>
+        <span>p</span>
+        <span class="space"></span>
+        <span>m</span>
+        <span>o</span>
+        <span>v</span>
+        <span>i</span>
+        <span>e</span>
+        <span>s</span>
+    </h1>
+    <div class="box-container">
+
+        <div class="box">
+            <img src="Images and Videos/tmovie1.jpg" alt="Image1">
+            <div class="content">
+                <h3>The Shawshank Redemption</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, asperiores.</p>
+                <a href="#topmovies" class="btn">Rate Now</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="Images and Videos/tmovie2.jpg" alt="Image1">
+            <div class="content">
+                <h3>The dark knight rises</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, asperiores.</p>
+                <a href="#topmovies" class="btn">Rate Now</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="Images and Videos/tmovie3.jpg" alt="Image1">
+            <div class="content">
+                <h3>The godfather</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, asperiores.</p>
+                <a href="#topmovies" class="btn">Rate Now</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="Images and Videos/tmovie4.jpg" alt="Image1">
+            <div class="content">
+                <h3>Fight club</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, asperiores.</p>
+                <a href="#topmovies" class="btn">Rate Now</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="Images and Videos/tmovie5.jpg" alt="Image1">
+            <div class="content">
+                <h3>Forrest Gump</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, asperiores.</p>
+                <a href="#topmovies" class="btn">Rate Now</a>
+            </div>
+        </div>
+
+        <div class="box">
+            <img src="Images and Videos/tmovie6.jpg" alt="Image1">
+            <div class="content">
+                <h3>Inception</h3>
+                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius, asperiores.</p>
+                <a href="#topmovies" class="btn">Rate Now</a>
+            </div>
+        </div>
+
+    </div>
+</section>
+
+<section class="services" id="services">
+    <h1 class="heading">
+        <span>s</span>
+        <span>e</span>
+        <span>r</span>
+        <span>v</span>
+        <span>i</span>
+        <span>c</span>
+        <span>e</span>
+        <span>s</span>      
+    </h1>
+
+    <div class="box-container">
+
+        <div class="box">
+            <i class="fa-solid fa-clapperboard"></i>
+            <h3>Catch Latest Movies</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia consectetur nostrum iste voluptatem facilis neque ut? Fugit explicabo provident consequatur.</p>
+        </div>
+
+        <div class="box">
+            <i class="fa-solid fa-video"></i>
+            <h3>Get Best Movie Recomendation</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia consectetur nostrum iste voluptatem facilis neque ut? Fugit explicabo provident consequatur.</p>
+        </div>
+
+        <div class="box">
+            <i class="fa-solid fa-star"></i>
+            <h3>Rate Movies</h3>
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Mollitia consectetur nostrum iste voluptatem facilis neque ut? Fugit explicabo provident consequatur.</p>
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="contact" id="contact">
+    <h1 class="heading">
+        <span>c</span>
+        <span>o</span>
+        <span>n</span>
+        <span>t</span>
+        <span>a</span>
+        <span>c</span>
+        <span>t</span>
+    </h1>
+
+    <div class="row">
+        <div class="image">
+            <img src="/Images and Videos/contact.png" alt="">
+        </div>
+ 
+        <form action="">
+            <div class="inputBox">
+                <input type="text" placeholder="Name">
+                <input type="email" placeholder="Email">
+            </div>
+            <div class="inputBox">
+                <input type="number" placeholder="Number">
+                <input type="text" placeholder="Subject">
+            </div>
+
+            <textarea name="" id="" cols="30" rows="10" placeholder="Message"></textarea>
+            <input type="submit" class="btn" value="send message">
+        </form>
+
+    </div>
+</section>
+
+
+<section class="footer">
+    <div class="box-container">
+        <div class="box">
+            <h3>about us</h3>
+            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestias, sit aperiam. Sapiente aut eum deleniti nam sequi esse ut officia.</p>
+        </div>
+        <div class="box">
+            <h3>quick links</h3>
+            <a href="#home">Home</a> 
+            <a href="#book">Book Show</a>
+            <a href="#upcoming">Upcoming Movies</a>
+            <a href="#topmovies">Top Movies</a>
+            <a href="#services">Services</a>
+            <a href="#contact">Contact Us</a>
+        </div>
+
+        <div class="box">
+            <h3>follow us</h3>
+            <a href="#">facebook</a>
+            <a href="#">instagram</a>
+            <a href="#">Twitter</a>
+            <a href="#">LinkedIn</a>
+        </div>
+    </div>
+
+    <h1 class="credit">Created by <span>Kartik Hatwar</span></h1>
+</section>
+
+
+       <!-- custom javascript -->
+    <script src="js/script.js"></script>
+</body>
+</html>
