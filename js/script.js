@@ -63,8 +63,8 @@ function showMovies(data){
     main.innerHTML='';
 
     
-    data.forEach(movie =>{
-        const {title , poster_path , overview , release_date} = movie;
+    for(let i = 0 ; i<8 ; i++){
+        const {title , poster_path , overview , release_date} = data[i];
         const movieE1 = document.createElement('div');
         movieE1.classList.add('box');
         movieE1.innerHTML = `
@@ -77,7 +77,7 @@ function showMovies(data){
 
         `
         main.appendChild(movieE1);
-    })
+    }
      
 }
 
