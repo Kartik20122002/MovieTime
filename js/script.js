@@ -38,13 +38,14 @@ function rangeSlide(value) {
 
 
 const API_KEY = 'api_key=e272f317f8df98d65d0f955c6dc2b70d';
+const Imbd_api = 'k_rldl3rxl';
 const BASE_URL = 'https://api.themoviedb.org/3';
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
 
 
 
-const TAPI_URL = BASE_URL + '/movie/popular?' + API_KEY;
+const TAPI_URL = BASE_URL + '/movie/top_rated?' + API_KEY;
 const main = document.getElementById('tmovies');
 
 
@@ -103,6 +104,7 @@ function showMovies2(data2){
     
     for(let i = 0 ; i<3 ; i++){
         const {title , poster_path , overview ,release_date ,popularity,id} = data2[i];
+       
         const movieE1 = document.createElement('div');
         movieE1.classList.add('box');
         movieE1.innerHTML = `
@@ -122,4 +124,52 @@ function showMovies2(data2){
         main2.appendChild(movieE1);
     }
      
+}
+
+
+
+const UAPI_URL = BASE_URL + '/movie/upcoming?' + API_KEY;
+const main3 = document.getElementById('umovies');
+
+getMovies3(UAPI_URL);
+
+function getMovies3(url){
+
+    fetch(url).then(res => res.json()).then(data3 =>{
+        console.log(data3.results);
+        showMovies3(data3.results);
+    })
+}
+
+function showMovies3(data3){
+
+    main3.innerHTML='';
+
+    
+    for(let i = 0 ; i<4 ; i++){
+        const {title , poster_path , overview , release_date} = data3[i];
+        const movieE1 = document.createElement('div');
+        movieE1.classList.add('box');
+        movieE1.innerHTML = `
+                <img src="${IMG_URL+poster_path}" alt="${title}">
+                <div class="content">
+                    <h3>${title}</h3>
+                    <p>${overview}</p>
+                    <a href="#topmovies" id="rel"> Releasing on:<br>${release_date}</a>
+                </div>
+
+        `
+        main3.appendChild(movieE1);
+    }
+     
+}
+
+
+testmovies(TEST);
+
+function testmovies(url){
+
+    fetch(url).then(res => res.json()).then(data4 =>{
+        console.log(data4.Top250DataDetail);
+    })
 }

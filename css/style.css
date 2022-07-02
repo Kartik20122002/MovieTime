@@ -413,13 +413,13 @@ header .search-bar-container label:hover{
     color: #666;
 }
 
-.upcoming .box-container{
+.nowplaying .box-container{
     display: flex;
     flex-wrap: wrap;
     gap: 2rem;
 }
 
-.upcoming .box-container .box{
+.nowplaying .box-container .box{
     flex: 1 1 30rem;
     padding: 1rem;
     border-radius: 0.5rem;
@@ -433,28 +433,28 @@ header .search-bar-container label:hover{
     /* padding: 1.5rem; */
 } 
 
-.upcoming .box-container .box img{
+.nowplaying .box-container .box img{
     height: 25rem;
     width: 100%;
     object-fit: cover;
 }
 
-.upcoming .box-container .box .content{
+.nowplaying .box-container .box .content{
     padding:2rem;
 }
 
-.upcoming .box-container .box .content h3{
+.nowplaying .box-container .box .content h3{
     font-size: 2rem ;
     color: #333;
 }
 
-.upcoming .box-container .box .content p{
+.nowplaying .box-container .box .content p{
     font-size: 1.7rem ;
     color: #666;
     padding:1rem 0;
 }
 
-.upcoming .box-container .box .content .price{
+.nowplaying .box-container .box .content .price{
     font-size: 2rem;
     color: #333;
     padding-top: 1rem;
@@ -502,16 +502,27 @@ header .search-bar-container label:hover{
 
 .pop span{
     color: var(--green);
-    /* font-size: 2rem; */
+}
+.upcoming .box-container .box .content #rel{
+    background-color: transparent;
+    border: none;
+    color: transparent;
+ }
+
+ .upcoming .box-container .box:hover .content #rel{
+    font-size: 2rem;
+    color: var(--green);
 }
 
-.topmovies .box-container{
+
+
+.topmovies .box-container , .upcoming .box-container{
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
 }
 
-.topmovies .box-container .box{
+.topmovies .box-container .box , .upcoming .box-container .box{
     overflow: hidden;
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
     border: 1rem solid #fff;
@@ -521,13 +532,13 @@ header .search-bar-container label:hover{
     position: relative;
 }
 
-.topmovies .box-container .box img{
+.topmovies .box-container .box img , .upcoming .box-container .box img{
     height: 100%;
     width: 100%;
     object-fit: cover;
 }
 
-.topmovies .box-container .box .content{
+.topmovies .box-container .box .content,.upcoming .box-container .box .content{
     position: absolute;
     top: 0; left: 0;
     z-index: 0;
@@ -539,38 +550,40 @@ header .search-bar-container label:hover{
     padding: 2rem;
     padding-top: 5rem;
 }
-.topmovies .box-container .box:hover .content{
+.topmovies .box-container .box:hover .content , .upcoming .box-container .box:hover .content{
     background: rgba(0,0,0, 0.7);
 }
 
-.topmovies .box-container .box .content h3{
+.topmovies .box-container .box .content h3 , .upcoming .box-container .box .content h3{
     font-size: 0;
     color: var(--green);
 }
 
-.topmovies .box-container .box:hover .content h3{
+.topmovies .box-container .box:hover .content h3,.upcoming .box-container .box:hover .content h3{
     font-size: 2.5rem;
 }
 
-.topmovies .box-container .box .content p{
+.topmovies .box-container .box .content p,.upcoming .box-container .box .content p{
     font-size: 0;
     color: #eee;
     padding: 0.5rem 0;
 }
 
-.topmovies .box-container .box:hover .content p{
+.topmovies .box-container .box:hover .content p,.upcoming .box-container .box:hover .content p{
     font-size: 1.5rem;
     color: #eee;
     padding: 0.5rem 0;
 }
 
-.topmovies .box-container .box .content .btn{
+.topmovies .box-container .box .content .btn,.upcoming .box-container .box .content .btn{
    background-color: transparent;
    border: none;
    color: transparent;
 }
 
-.topmovies .box-container .box:hover .content .btn{
+
+
+.topmovies .box-container .box:hover .content .btn , .upcoming .box-container .box:hover .content .btn{
     background: var(--green);
     color: #fff;
     border: 0.2rem solid var(--green);
