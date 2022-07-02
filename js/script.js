@@ -45,7 +45,7 @@ const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
 
 
-const TAPI_URL = BASE_URL + '/movie/top_rated?' + API_KEY;
+const TAPI_URL = BASE_URL + '/movie/top_rated?' + API_KEY  +'&region=IN';
 const main = document.getElementById('tmovies');
 
 
@@ -82,7 +82,7 @@ function showMovies(data){
      
 }
 
-const PAPI_URL = BASE_URL + '/movie/now_playing?' + API_KEY;
+const PAPI_URL = BASE_URL + '/movie/now_playing?' + API_KEY  +'&region=IN';
 const main2 = document.getElementById('pmovies');
 
 
@@ -128,7 +128,7 @@ function showMovies2(data2){
 
 
 
-const UAPI_URL = BASE_URL + '/movie/upcoming?' + API_KEY;
+const UAPI_URL = BASE_URL + '/movie/upcoming?' + API_KEY +'&region=IN';
 const main3 = document.getElementById('umovies');
 
 getMovies3(UAPI_URL);
