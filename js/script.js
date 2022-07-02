@@ -39,13 +39,16 @@ function rangeSlide(value) {
 
 const API_KEY = 'api_key=e272f317f8df98d65d0f955c6dc2b70d';
 const BASE_URL = 'https://api.themoviedb.org/3';
-const PAPI_URL = BASE_URL + '/discover/movie?sort_by=popularity.desc&' + API_KEY;
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
-const main = document.getElementById('umovies');
 
 
-getMovies(PAPI_URL);
+
+const TAPI_URL = BASE_URL + '/movie/popular?' + API_KEY;
+const main = document.getElementById('tmovies');
+
+
+getMovies(TAPI_URL);
 
 function getMovies(url){
 
@@ -54,9 +57,6 @@ function getMovies(url){
         showMovies(data.results);
     })
 }
-
-
-
 
 function showMovies(data){
 
@@ -81,4 +81,45 @@ function showMovies(data){
      
 }
 
+const PAPI_URL = BASE_URL + '/movie/now_playing?' + API_KEY;
+const main2 = document.getElementById('pmovies');
 
+
+getMovies2(PAPI_URL);
+
+function getMovies2(url){
+
+    fetch(url).then(res => res.json()).then(data2 =>{
+        console.log(data2.results);
+        showMovies2(data2.results);
+    })
+}
+
+
+function showMovies2(data2){
+
+    main2.innerHTML='';
+
+    
+    for(let i = 0 ; i<3 ; i++){
+        const {title , poster_path , overview ,release_date ,popularity,id} = data2[i];
+        const movieE1 = document.createElement('div');
+        movieE1.classList.add('box');
+        movieE1.innerHTML = `
+                 <img src="${IMG_URL+poster_path}" alt="${title}">
+         
+                 <div class="content">
+                                <h3>${title}</h3>   <!-- movie-info-->
+                                <p>${overview}</p>  
+                                <div class="pop">Popularity :<span> ${popularity} </span></div>
+                                <div class="price">Release Date : ${release_date}</div>
+                 </div>
+              <div class="it">
+              <a href="#book" class="btn">Book Now</a>
+              </div>
+
+        `
+        main2.appendChild(movieE1);
+    }
+     
+}

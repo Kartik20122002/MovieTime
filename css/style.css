@@ -496,6 +496,15 @@ header .search-bar-container label:hover{
     box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.1);
 }
 
+.pop{
+    font-size: 2rem;
+}
+
+.pop span{
+    color: var(--green);
+    /* font-size: 2rem; */
+}
+
 .topmovies .box-container{
     display: flex;
     flex-wrap: wrap;
