@@ -7,6 +7,7 @@ let formClose = document.querySelector('#form-close');
 let menu = document.querySelector('#menu-bar');
 let navbar = document.querySelector('.navbar');
 
+
 window.onscroll = () =>{
     searchBtn.classList.remove('fa-times');
     searchBar.classList.remove('active');
@@ -17,6 +18,8 @@ window.onscroll = () =>{
 menu.addEventListener('click', ()=>{
     navbar.classList.toggle('active');
 })
+
+
  
 searchBtn.addEventListener('click' , ()=>{
     searchBtn.classList.toggle('fa-times');
@@ -73,7 +76,7 @@ function showMovies(data){
                 <div class="content">
                     <h3>${title}</h3>
                     <p>${overview}</p>
-                    <a href="#topmovies" class="btn">More Info</a>
+                    <a href="#topmovies" class="btn" id="morebtn" >More Info</a>
                 </div>
 
         `
@@ -155,7 +158,7 @@ function showMovies3(data3){
                 <div class="content">
                     <h3>${title}</h3>
                     <p>${overview}</p>
-                    <a href="#topmovies" id="rel"> Releasing on:<br>${release_date}</a>
+                    <a href="#topmovies" id="rel"  id="morebtn"> Releasing on:<br>${release_date}</a>
                 </div>
 
         `
@@ -173,3 +176,5 @@ function testmovies(url){
         console.log(data4.Top250DataDetail);
     })
 }
+
+

@@ -514,8 +514,6 @@ header .search-bar-container label:hover{
     color: var(--green);
 }
 
-
-
 .topmovies .box-container , .upcoming .box-container{
     display: flex;
     flex-wrap: wrap;
