@@ -73,7 +73,7 @@ function showMovies(data){
                 <div class="content">
                     <h3>${title}</h3>
                     <p>${overview}</p>
-                    <a href="#topmovies" class="btn">Rate Now</a>
+                    <a href="#topmovies" class="btn">More Info</a>
                 </div>
 
         `
