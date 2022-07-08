@@ -112,7 +112,6 @@ if(original_title && original_title!=title) name+=` (${original_title})`;
 }
 
 
-let begin = cast;
 
 
 
