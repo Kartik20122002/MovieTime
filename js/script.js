@@ -46,15 +46,15 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
 
+// https://api.themoviedb.org/3/trending/all/day?api_key=1
 
 
-
-
+const TRENDURL = BASE_URL + '/trending/movie/week?' + API_KEY;
 const TAPI_URL = BASE_URL + '/movie/top_rated?' + API_KEY  +'&region=IN';
 const main = document.getElementById('tmovies');
 
 
-getMovies(TAPI_URL);
+getMovies(TRENDURL);
 
 function getMovies(url){
 
@@ -63,14 +63,7 @@ function getMovies(url){
     })
 }
 
-let top1;
-let top2;
-let top3;
-let top4;
-let top5;
-let top6;
-let top7;
-let top8;
+let top1 , top2 , top3 , top4 ,top5 ,top6 ,top7 , top8 ;
 
 let c;
 
@@ -87,13 +80,15 @@ function showMovies(data){
                 <img src="${IMG_URL+poster_path}" alt="${title}">
                 <div class="content" id="top${i+1}">
                     <h3>${title}</h3>
-                    <p>${overview}</p>
                     <a href="page2.html" class="btn">More Info</a>
                 </div>
 
         `
         main.appendChild(movieE1);
     }
+
+    for(let i = 0 ; i < 8 ; i++) document.getElementById(`top${i+1}`);
+
     top1 = document.getElementById('top1');
     top2 = document.getElementById('top2');
     top3 = document.getElementById('top3');
@@ -199,10 +194,7 @@ function getMovies3(url){  /*******************UPCOMING MOVIES******************
 
 
 
-let please1;
-let please2;
-let please3;
-let please4;
+let please1,please2,please3,please4;
  
 let v;
 
@@ -212,7 +204,7 @@ function showMovies3(data3){
     v= data3;
     
     for(let i = 0 ; i<4 ; i++){
-        const {title , poster_path , overview , release_date,id} = data3[i];
+        const {title , poster_path , overview} = data3[i];
        
         const movieE1 = document.createElement('div');
         movieE1.classList.add('box');

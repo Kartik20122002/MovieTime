@@ -22,17 +22,104 @@ function getMovies(url){
 }
 
 function show(movieinfo){
-    const {title , overview ,release_date} = movieinfo
+    const {title , overview,tagline ,release_date,original_title,poster_path,runtime,genres,backdrop_path} = movieinfo
+
+    let sum="" ;
+
+genres.forEach(myFunction);
+
+function myFunction(item) {
+  console.log(item.name);
+  sum+=` ${item.name} `
+}
+if(!sum) sum = "N/A"
+
+let name = title;
+
+if(original_title && original_title!=title) name+=` (${original_title})`;
     
-    let chane = document.getElementById('container');
+    let chane = document.body;
     chane.innerHTML = `
-    Title : ${title}
-    <br>
-    Overview : ${overview}
-    <br>
-    Release Date : ${release_date}
+    
+     
+    <img class="bask" src="${IMG_URL+backdrop_path}" alt="none">
+    <div class="container" id="container">
+    
+     <div class="poster">
+        <img src="${IMG_URL+poster_path}" alt="${name}">
+     </div>
+     
+     <div class="info">
+        <div class="movie-title">
+        ${name}
+        </div>
+
+        <div class="movie-detail">
+            <div class="set">
+                <label>Release Date</label>
+                <span>${release_date}</span>
+            </div>
+            <div class="set">
+                <label>Running Time</label>
+                <span>${runtime} mins</span>
+            </div>
+            <div class="set">
+                <label>Genre</label>
+                <span>${sum}</span>
+            </div>
+        </div>
+
+        <div class="movie-description">
+        ${overview}
+        </div>
+        <div class="movie-cast">
+            <div class="header">Cast and Crew</div>
+            <div class="list">
+                <div class="cast">
+                    <img src="/Images and Videos/umovie2.jpg" alt="cast">
+                    <label>Put Cast Name Here</label>
+                </div>
+                <div class="cast">
+                    <img src="/Images and Videos/umovie2.jpg" alt="cast">
+                    <label>Put Cast Name Here</label>
+                </div>
+                <div class="cast">
+                    <img src="/Images and Videos/umovie2.jpg" alt="cast">
+                    <label>Put Cast Name Here</label>
+                </div>
+                <div class="cast">
+                    <img src="/Images and Videos/umovie2.jpg" alt="cast">
+                    <label>Put Cast Name Here</label>
+                </div>
+                <div class="cast">
+                    <img src="/Images and Videos/umovie2.jpg" alt="cast">
+                    <label>Put Cast Name Here</label>
+                </div>
+                <div class="cast">
+                    <img src="/Images and Videos/umovie2.jpg" alt="cast">
+                    <label>Put Cast Name Here</label>
+                </div>
+            </div>
+        </div>
+     </div>
+
+        
+
+    </div>
+
+
     `
 }
+
+
+let begin = cast;
+
+
+
+
+
+
+
 
 window.onbeforeunload = closingCode;
 function closingCode(){
