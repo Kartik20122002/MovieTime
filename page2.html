@@ -8,21 +8,23 @@
     <link rel="stylesheet" href="css/style2.css">
 </head>
 <body>
-    <img class="bask" src="/Images and Videos/page2img.jpg" alt="none">
-    <div class="container" id="container">
+    <div class="bask" style="background-image: url('/Images\ and\ Videos/page2img');">
+   
+<div class="container" id="container">
     
-     <div class="poster">
+
+  <div class="poster">
         <img src="${IMG_URL+poster_path}" alt="${title}">
-     </div>
+  </div>
      
-     <div class="info">
+  <div class="info">
         <div class="movie-title">
         ${title}
         </div>
 
         <div class="movie-detail">
             <div class="set">
-                <label>Release Date</label>
+                <label>Release Date</label> 
                 <span>${release_date}</span>
             </div>
             <div class="set">
@@ -38,6 +40,7 @@
         <div class="movie-description">
         ${overview}
         </div>
+        
         <div class="movie-cast">
             <div class="header">Cast and Crew</div>
             <div class="list">
@@ -71,7 +74,7 @@
 
         
 
-    </div>
+</div>
     <!-- <a href="index.html" id="me" class = btn> Go Back</a> -->
 
 </body>
