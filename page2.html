@@ -8,73 +8,78 @@
     <link rel="stylesheet" href="css/style2.css">
 </head>
 <body>
-    <div class="bask" style="background-image: url('/Images\ and\ Videos/page2img');">
-   
-<div class="container" id="container">
+    <div class="bask" style="background-image: url('${IMG_URL+backdrop_path}');">
+
     
-
-  <div class="poster">
-        <img src="${IMG_URL+poster_path}" alt="${title}">
-  </div>
-     
-  <div class="info">
-        <div class="movie-title">
-        ${title}
-        </div>
-
-        <div class="movie-detail">
-            <div class="set">
-                <label>Release Date</label> 
-                <span>${release_date}</span>
-            </div>
-            <div class="set">
-                <label>Running Time</label>
-                <span>Put Running Time Here</span>
-            </div>
-            <div class="set">
-                <label>Genre</label>
-                <span>Put Genre Here</span>
-            </div>
-        </div>
-
-        <div class="movie-description">
-        ${overview}
-        </div>
+        <div class="container" id="container">
         
-        <div class="movie-cast">
-            <div class="header">Cast and Crew</div>
-            <div class="list">
-                <div class="cast">
-                    <img src="/Images and Videos/umovie2.jpg" alt="cast">
-                    <label>Put Cast Name Here</label>
+         <div class="poster" style="background-image: url('${IMG_URL+poster_path}');">
+         </div>
+         
+        <div class="info">
+            <div class="movie-title">
+            ${name}
+            </div>
+    
+            <div class="movie-tagline">
+            ${tagline}
+            </div>
+    
+            <div class="movie-detail">
+                <div class="set">
+                    <label>Release Date</label>
+                    <span>${release_date}</span>
                 </div>
-                <div class="cast">
-                    <img src="/Images and Videos/umovie2.jpg" alt="cast">
-                    <label>Put Cast Name Here</label>
+                <div class="set">
+                    <label>Running Time</label>
+                    <span>${run}</span>
                 </div>
-                <div class="cast">
-                    <img src="/Images and Videos/umovie2.jpg" alt="cast">
-                    <label>Put Cast Name Here</label>
-                </div>
-                <div class="cast">
-                    <img src="/Images and Videos/umovie2.jpg" alt="cast">
-                    <label>Put Cast Name Here</label>
-                </div>
-                <div class="cast">
-                    <img src="/Images and Videos/umovie2.jpg" alt="cast">
-                    <label>Put Cast Name Here</label>
-                </div>
-                <div class="cast">
-                    <img src="/Images and Videos/umovie2.jpg" alt="cast">
-                    <label>Put Cast Name Here</label>
+                <div class="set">
+                    <label>Genre</label>
+                    <span>${sum}</span>
                 </div>
             </div>
+    
+            <div class="movie-description">
+            ${overview}
+            </div>
+            
+            <div class="movie-cast">
+                <div class="header">Cast and Crew</div>
+                <div class="list">
+                    <div class="cast">
+                        <img src="/Images and Videos/umovie2.jpg" alt="cast">
+                        <label>Put Cast Name Here</label>
+                    </div>
+                    <div class="cast">
+                        <img src="/Images and Videos/umovie2.jpg" alt="cast">
+                        <label>Put Cast Name Here</label>
+                    </div>
+                    <div class="cast">
+                        <img src="/Images and Videos/umovie2.jpg" alt="cast">
+                        <label>Put Cast Name Here</label>
+                    </div>
+                    <div class="cast">
+                        <img src="/Images and Videos/umovie2.jpg" alt="cast">
+                        <label>Put Cast Name Here</label>
+                    </div>
+                    <div class="cast">
+                        <img src="/Images and Videos/umovie2.jpg" alt="cast">
+                        <label>Put Cast Name Here</label>
+                    </div>
+                    <div class="cast">
+                        <img src="/Images and Videos/umovie2.jpg" alt="cast">
+                        <label>Put Cast Name Here</label>
+                    </div>
+                </div>
+            </div>
+         </div>
+    
         </div>
-     </div>
-
-        
-
-</div>
+              
+    
+    </div>
+    
     <!-- <a href="index.html" id="me" class = btn> Go Back</a> -->
 
 </body>

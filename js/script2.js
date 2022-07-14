@@ -53,7 +53,7 @@ if(original_title && original_title!=title) name+=` (${original_title})`;
      <div class="poster" style="background-image: url('${IMG_URL+poster_path}');">
      </div>
      
-     <div class="info">
+    <div class="info">
         <div class="movie-title">
         ${name}
         </div>
@@ -112,10 +112,10 @@ if(original_title && original_title!=title) name+=` (${original_title})`;
         </div>
      </div>
 
-        
-
     </div>
+          
 
+</div>
 
     `
 }
