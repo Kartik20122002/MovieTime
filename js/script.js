@@ -45,7 +45,6 @@ const Imbd_api = 'k_rldl3rxl';
 const BASE_URL = 'https://api.themoviedb.org/3';
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
-
 // https://api.themoviedb.org/3/trending/all/day?api_key=1
 
 
@@ -54,12 +53,12 @@ const TAPI_URL = BASE_URL + '/movie/top_rated?' + API_KEY  +'&region=IN';
 const main = document.getElementById('tmovies');
 
 
-getMovies(TRENDURL);
+getMovies(TRENDURL,8);
 
-function getMovies(url){
+function getMovies(url,n){
 
     fetch(url).then(res => res.json()).then(data =>{
-        showMovies(data.results);
+        showMovies(data.results,n);
     })
 }
 
@@ -67,12 +66,12 @@ let top1 , top2 , top3 , top4 ,top5 ,top6 ,top7 , top8 ;
 
 let c;
 
-function showMovies(data){
+function showMovies(data,n){
     c = data;
     main.innerHTML='';  /*********************TOP MOVIES***************************/
 
     
-    for(let i = 0 ; i<8 ; i++){     
+    for(let i = 0 ; i<n ; i++){     
         const {title , poster_path , overview , release_date} = data[i];
         const movieE1 = document.createElement('div');
         movieE1.classList.add('box');
@@ -247,4 +246,33 @@ function showMovies3(data3){
 
 
 
+const S_URL = BASE_URL +'/search/movie?'+API_KEY+'&query=';
 
+const form = document.getElementById('form');
+const search = document.getElementById('search-bar');
+
+const heading = document.getElementById('searchplace');
+
+
+
+form.addEventListener('submit' , (e)=>{
+    
+    document.getElementById('playingnow').remove();
+    document.getElementById('upcoming').remove();
+    document.getElementById('home').remove();
+    document.getElementById('book').remove();
+    document.getElementById('services').remove();
+    document.getElementById('contact').remove();
+    
+    
+    e.preventDefault();
+    const searchTerm = search.value;
+    heading.innerHTML=`<span>Results found on ${searchTerm} : </span>`;
+
+    
+
+    if(searchTerm){
+        getMovies(S_URL + searchTerm,20);
+    }
+    
+} )

@@ -168,6 +168,9 @@ font-size: 1.5rem;
 }
 
 
+.movie-cast .header{
+   color: black;
+}
 
 label{
    color: black;
