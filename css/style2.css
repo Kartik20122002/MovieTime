@@ -10,6 +10,7 @@ color2dark = #2D3741  */
    box-sizing: border-box;
    font-family: 'Poppins' , sans-serif;
    transition: all 0.35s linear;
+   color: white;
 }
 
 .bask{
@@ -86,9 +87,9 @@ font-size: 1.5rem;
 }
 
 .movie-cast{
-   margin: 1rem;
+   margin: 0.9rem;
    margin-top: 0.5rem;
-   padding: 1rem;
+   padding: 0.9rem;
 }
 
 .movie-cast .header{
@@ -98,7 +99,7 @@ font-size: 1.5rem;
 
 .list{
    display: flex;
-   margin: 1rem;
+   margin: 0.9rem;
    justify-content: space-evenly;
 }
 
@@ -150,14 +151,14 @@ font-size: 1.5rem;
    .info{
       text-align: center;
       backdrop-filter: blur(12px) contrast(80%);
-      height: 100vh;
+      min-height: 100vh;
    }
 
    .container{
       flex-direction: column;
    }
    html{
-      font-size:90%;
+      font-size:87%;
       color: white;
    }
 
@@ -176,18 +177,18 @@ font-size: 1.5rem;
 
 
 .movie-cast .header{
-   color: black;
+   color: white
 }
 
 label{
-   color: black;
+   color: white;
 }
 
 .poster{
    z-index: -1;
    position: absolute;
    min-height: 100vh;
-   min-width: 100%;
+   width: 100%;
    margin: auto;
 }
 
@@ -197,3 +198,26 @@ label{
 
 }
 
+@media(max-width:860px){
+   html{
+      font-size: 85%;
+   }
+   .poster{
+      min-height: 150vh;
+   }
+   .info{
+      min-height: 150vh;
+   }
+}
+
+@media(max-width:525px){
+   html{
+      font-size: 80%;
+   }
+   .poster{
+      min-height: 155vh;
+   }
+   .info{
+      min-height: 155vh;
+   }
+}
