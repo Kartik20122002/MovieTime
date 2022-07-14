@@ -12,9 +12,16 @@ color2dark = #2D3741  */
    transition: all 0.35s linear;
 }
 
-
+.bask{
+   width: 100%;
+   height: 100vh;
+   background-repeat: no-repeat;
+   background-size: cover;
+   z-index: -10;
+}
 
 .container{
+   backdrop-filter: blur(12px) contrast(80%);
    position: absolute;
    top: 0; left: 0;
    display: flex;

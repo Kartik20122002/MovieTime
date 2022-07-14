@@ -15,7 +15,6 @@ getMovies(infoURL);
 
 function getMovies(url){
 
-
     fetch(url).then(res => res.json()).then(data4 =>{
         console.log(data4);
         show(data4);
@@ -45,7 +44,9 @@ if(original_title && original_title!=title) name+=` (${original_title})`;
     
     let chane = document.body;
     chane.innerHTML = `
-    
+
+    <div class="bask" style="background-image: url('${IMG_URL+backdrop_path}');">
+
     
     <div class="container" id="container">
     
