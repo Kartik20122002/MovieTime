@@ -8,29 +8,29 @@ let menu = document.querySelector('#menu-bar');
 let navbar = document.querySelector('.navbar');
 
 
-window.onscroll = () =>{
+window.onscroll = () => {
     searchBtn.classList.remove('fa-times');
     searchBar.classList.remove('active');
     navbar.classList.remove('active');
     loginForm.classList.remove('active');
 }
 
-menu.addEventListener('click', ()=>{
+menu.addEventListener('click', () => {
     navbar.classList.toggle('active');
 })
 
 
- 
-searchBtn.addEventListener('click' , ()=>{
+
+searchBtn.addEventListener('click', () => {
     searchBtn.classList.toggle('fa-times');
     searchBar.classList.toggle('active');
 })
 
-formBtn.addEventListener('click' , ()=>{
+formBtn.addEventListener('click', () => {
     loginForm.classList.add('active');
 })
 
-formClose.addEventListener('click' , ()=>{
+formClose.addEventListener('click', () => {
     loginForm.classList.remove('active');
 })
 
@@ -49,44 +49,58 @@ const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 
 
 const TRENDURL = BASE_URL + '/trending/movie/week?' + API_KEY;
-const TAPI_URL = BASE_URL + '/movie/top_rated?' + API_KEY  +'&region=IN';
+const TAPI_URL = BASE_URL + '/movie/top_rated?' + API_KEY + '&region=IN';
 const main = document.getElementById('tmovies');
 
 
-getMovies(TRENDURL,8);
+getMovies(TRENDURL, 8);
 
-function getMovies(url,n){
+function getMovies(url, n) {
 
-    fetch(url).then(res => res.json()).then(data =>{
-        showMovies(data.results,n);
+    fetch(url).then(res => res.json()).then(data => {
+        showMovies(data.results, n);
     })
 }
 
-let top1 , top2 , top3 , top4 ,top5 ,top6 ,top7 , top8 ;
+let top1, top2, top3, top4, top5, top6, top7, top8;
 
 let c;
 
-function showMovies(data,n){
+function showMovies(data, n) {
     c = data;
-    main.innerHTML='';  /*********************TOP MOVIES***************************/
+    main.innerHTML = ''; /*********************TOP MOVIES***************************/
 
-    
-    for(let i = 0 ; i<n ; i++){     
-        const {title , poster_path , overview , release_date} = data[i];
+
+    for (let i = 0; i < n; i++) {
+        const { title, poster_path, overview, release_date } = data[i];
         const movieE1 = document.createElement('div');
         movieE1.classList.add('box');
         movieE1.innerHTML = `
-                <img src="${IMG_URL+poster_path}" alt="${title}">
-                <div class="content" id="top${i+1}">
-                    <h3>${title}</h3>
-                    <a href="page2.html" class="btn">More Info</a>
+                // <img src="${IMG_URL+poster_path}" alt="${title}">
+                // <div class="content" >
+                //     <h3>${title}</h3>
+                //     <a href="page2.html" class="btn">More Info</a>
+                // </div>
+
+
+                <div class="box1">
+                  <div class="imgbx" >
+                      <img src="${IMG_URL+poster_path}" alt="${title}">
+                  </div>
+                  <div class="details">
+                      <h2>${title} <br> <span> ${release_date} </span> </h2>
+                      <div class="btn-icon" id="top${i+1}">
+                      <a href="page2.html" class="btn" >More Info</a>
+                  </div>
+                  </div>
+
                 </div>
 
         `
         main.appendChild(movieE1);
     }
 
-    for(let i = 0 ; i < 8 ; i++) document.getElementById(`top${i+1}`);
+    for (let i = 0; i < 8; i++) document.getElementById(`top${i+1}`);
 
     top1 = document.getElementById('top1');
     top2 = document.getElementById('top2');
@@ -97,30 +111,30 @@ function showMovies(data,n){
     top7 = document.getElementById('top7');
     top8 = document.getElementById('top8');
 
-    top1.addEventListener('click',()=>{
-        localStorage.setItem('key',c[0].id)
+    top1.addEventListener('click', () => {
+        localStorage.setItem('key', c[0].id)
     })
-     
-    top2.addEventListener('click',()=>{
-        localStorage.setItem('key',c[1].id)
+
+    top2.addEventListener('click', () => {
+        localStorage.setItem('key', c[1].id)
     })
-    top3.addEventListener('click',()=>{
-        localStorage.setItem('key',c[2].id)
+    top3.addEventListener('click', () => {
+        localStorage.setItem('key', c[2].id)
     })
-    top4.addEventListener('click',()=>{
-        localStorage.setItem('key',c[3].id)
+    top4.addEventListener('click', () => {
+        localStorage.setItem('key', c[3].id)
     })
-    top5.addEventListener('click',()=>{
-        localStorage.setItem('key',c[4].id)
+    top5.addEventListener('click', () => {
+        localStorage.setItem('key', c[4].id)
     })
-    top6.addEventListener('click',()=>{
-        localStorage.setItem('key',c[5].id)
+    top6.addEventListener('click', () => {
+        localStorage.setItem('key', c[5].id)
     })
-    top7.addEventListener('click',()=>{
-        localStorage.setItem('key',c[6].id)
+    top7.addEventListener('click', () => {
+        localStorage.setItem('key', c[6].id)
     })
-    top8.addEventListener('click',()=>{
-        localStorage.setItem('key',c[7].id)
+    top8.addEventListener('click', () => {
+        localStorage.setItem('key', c[7].id)
     })
 }
 
@@ -129,29 +143,29 @@ function showMovies(data,n){
 
 
 
-const PAPI_URL = BASE_URL + '/movie/now_playing?' + API_KEY  +'&region=IN';
+const PAPI_URL = BASE_URL + '/movie/now_playing?' + API_KEY + '&region=IN';
 const main2 = document.getElementById('pmovies');
 
 
 getMovies2(PAPI_URL);
 
-function getMovies2(url){
+function getMovies2(url) {
 
-    fetch(url).then(res => res.json()).then(data2 =>{
+    fetch(url).then(res => res.json()).then(data2 => {
         console.log(data2.results);
         showMovies2(data2.results);
     })
 }
 
 
-function showMovies2(data2){
+function showMovies2(data2) {
 
-    main2.innerHTML='';
+    main2.innerHTML = '';
 
-    
-    for(let i = 0 ; i<3 ; i++){
-        const {title , poster_path , overview ,release_date ,popularity,id} = data2[i];
-       
+
+    for (let i = 0; i < 3; i++) {
+        const { title, poster_path, overview, release_date, popularity, id } = data2[i];
+
         const movieE1 = document.createElement('div');
         movieE1.classList.add('box');
         movieE1.innerHTML = `
@@ -170,7 +184,7 @@ function showMovies2(data2){
         `
         main2.appendChild(movieE1);
     }
-     
+
 }
 
 
@@ -178,14 +192,14 @@ function showMovies2(data2){
 
 
 
-const UAPI_URL = BASE_URL + '/movie/upcoming?' + API_KEY +'&region=IN';
+const UAPI_URL = BASE_URL + '/movie/upcoming?' + API_KEY + '&region=IN';
 const main3 = document.getElementById('umovies');
 
 getMovies3(UAPI_URL);
 
-function getMovies3(url){  /*******************UPCOMING MOVIES***************************/
+function getMovies3(url) { /*******************UPCOMING MOVIES***************************/
 
-    fetch(url).then(res => res.json()).then(data3 =>{
+    fetch(url).then(res => res.json()).then(data3 => {
         console.log(data3.results);
         showMovies3(data3.results);
     })
@@ -193,21 +207,21 @@ function getMovies3(url){  /*******************UPCOMING MOVIES******************
 
 
 
-let please1,please2,please3,please4;
- 
+let please1, please2, please3, please4;
+
 let v;
 
-function showMovies3(data3){
+function showMovies3(data3) {
 
-    main3.innerHTML='';
-    v= data3;
-    
-    for(let i = 0 ; i<4 ; i++){
-        const {title , poster_path , overview} = data3[i];
-       
+    main3.innerHTML = '';
+    v = data3;
+
+    for (let i = 0; i < 4; i++) {
+        const { title, poster_path, overview } = data3[i];
+
         const movieE1 = document.createElement('div');
         movieE1.classList.add('box');
-        
+
         movieE1.innerHTML = `
                 <img src="${IMG_URL+poster_path}" alt="${title}">
                 <div class="content" id=content${i+1}>
@@ -218,35 +232,35 @@ function showMovies3(data3){
 
         `
 
-        
-    
+
+
 
         main3.appendChild(movieE1);
     }
-        please1 = document.querySelector('#content1 .btn');
-        please2 = document.querySelector('#content2 .btn');
-        please3 = document.querySelector('#content3 .btn');
-        please4 = document.querySelector('#content4 .btn');
+    please1 = document.querySelector('#content1 .btn');
+    please2 = document.querySelector('#content2 .btn');
+    please3 = document.querySelector('#content3 .btn');
+    please4 = document.querySelector('#content4 .btn');
 
-    please1.addEventListener('click',()=>{
-        localStorage.setItem('key',v[0].id)
+    please1.addEventListener('click', () => {
+        localStorage.setItem('key', v[0].id)
     })
-    
-    please2.addEventListener('click',()=>{
-        localStorage.setItem('key',v[1].id)
+
+    please2.addEventListener('click', () => {
+        localStorage.setItem('key', v[1].id)
     })
-    please3.addEventListener('click',()=>{
-        localStorage.setItem('key',v[2].id)
+    please3.addEventListener('click', () => {
+        localStorage.setItem('key', v[2].id)
     })
-    please4.addEventListener('click',()=>{
-        localStorage.setItem('key',v[3].id)
+    please4.addEventListener('click', () => {
+        localStorage.setItem('key', v[3].id)
     })
-   
+
 }
 
 
 
-const S_URL = BASE_URL +'/search/movie?'+API_KEY+'&query=';
+const S_URL = BASE_URL + '/search/movie?' + API_KEY + '&query=';
 
 const form = document.getElementById('form');
 const search = document.getElementById('search-bar');
@@ -255,24 +269,24 @@ const heading = document.getElementById('searchplace');
 
 
 
-form.addEventListener('submit' , (e)=>{
-    
+form.addEventListener('submit', (e) => {
+
     document.getElementById('playingnow').remove();
     document.getElementById('upcoming').remove();
     document.getElementById('home').remove();
     document.getElementById('book').remove();
     document.getElementById('services').remove();
     document.getElementById('contact').remove();
-    
-    
+
+
     e.preventDefault();
     const searchTerm = search.value;
-    heading.innerHTML=`<span>Results found on ${searchTerm} : </span>`;
+    heading.innerHTML = `<span>Results found on ${searchTerm} : </span>`;
 
-    
 
-    if(searchTerm){
-        getMovies(S_URL + searchTerm,20);
+
+    if (searchTerm) {
+        getMovies(S_URL + searchTerm, 20);
     }
-    
-} )
+
+})
