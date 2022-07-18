@@ -135,6 +135,6 @@ function closingCode(){
 }
 
 
-re.addEventListener('click',()=>{
-    localStorage.removeItem('key');
-})
+// re.addEventListener('click',()=>{
+//     localStorage.removeItem('key');
+// })
