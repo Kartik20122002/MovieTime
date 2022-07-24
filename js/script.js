@@ -86,7 +86,7 @@ function getMovies(url, ids, n) {
 
             cl.addEventListener('click',()=>{
                 // console.log(id);
-                       localStorage.setItem('key',id);
+                       localStorage.setItem('key1',id);
             })
             
         }
