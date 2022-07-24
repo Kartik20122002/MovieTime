@@ -573,15 +573,16 @@ header .search-bar-container label:hover {
     width: 100%;
     display: flex;
     flex-wrap: wrap;
-    gap: 2rem;
+    gap: 1rem;
 }
 
 .moviebox {
     flex-basis: 25rem;
     height: 40rem;
-    flex-grow: 1;
+    /* flex-grow: 1; */
     flex-shrink: 1;
     background: #000;
+    margin: auto;
     border-radius: 15px;
     overflow: hidden;
     box-shadow: 0 5px 20px rgba(0, 0, 0, .3);
@@ -642,4 +643,11 @@ header .search-bar-container label:hover {
 .details h2 span {
     color: #bbb;
     font-size: 1.5rem;
+}
+
+@media (max-width:865px) {
+    html{
+        font-size: 40%;
+    }
+    
 }

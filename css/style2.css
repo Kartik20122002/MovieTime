@@ -121,7 +121,7 @@ body{
     flex-grow: 1;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
 }
 
 .poster {
@@ -149,11 +149,18 @@ body{
 
 @media(max-width:768px){
     html{
-        font-size: 50%;
+        font-size: 60%;
     }
 }
 
 @media (max-width:500px) {
+    .info{
+        justify-content: center;
+    }
+    .other{
+        justify-content: flex-start;
+        flex-basis: 1%;
+    }
     .container-main{
         flex-direction: column-reverse;
     }
@@ -167,10 +174,16 @@ body{
     .overview {
         flex-basis: 0;
     }
+    .poster {
+        object-fit: fill;
+        width: 13rem;
+        height: 17rem;
+    }
 }
 
-@media(max-width:465px){
+/* @media(max-width:465px){
     html{
         font-size: 45%;
     }
-}
+    
+} */

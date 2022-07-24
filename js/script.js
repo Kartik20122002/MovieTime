@@ -97,9 +97,9 @@ function getMovies(url, ids, n) {
 
 }
 
-getMovies(nowplaying, pmovies, 5);
-getMovies(upcoming, umovies, 10);
-getMovies(trending, tmovies, 10);
+getMovies(nowplaying, pmovies, 4);
+getMovies(upcoming, umovies, 8);
+getMovies(trending, tmovies, 8);
 
 
 
