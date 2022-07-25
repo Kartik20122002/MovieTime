@@ -17,7 +17,7 @@ const BASE_URL = 'https://api.themoviedb.org/3';
 const IMG_URL = 'https://image.tmdb.org/t/p/w500';
 let movieid = localStorage.getItem('key1');
 
-if(!movieid) movieid=793032;
+if(!movieid) movieid=438148;
 
 console.log(movieid);
 
@@ -49,21 +49,23 @@ function show(data){
     let main = document.querySelector('#change');
 
 
-    const trailer =`https://api.themoviedb.org/3/movie/${id1}/videos?api_key=e272f317f8df98d65d0f955c6dc2b70d&language=en-US`;
-
+    const trailer =`https://imdb-api.com/en/API/YouTubeTrailer/k_rldl3rxl/${imdb_id}`;
 
     
-    let trailer_key = '8ScCLfGGOPY';
     getTrailer(trailer);
-
-function getTrailer(url){
-
-    fetch(url).then(res => res.json()).then(data5 =>{
-
-
+    function getTrailer(url){
+        
+        fetch(url).then(res => res.json()).then(data5 =>{
+            
+        let trailer_url = data5.videoId;
         main.innerHTML=`
-    <div class="info">
+        <div class="info">
+            
+        <div class="pri-info">
 
+            <div class="poster"><img src="${IMG_URL+ poster_path1}" alt="${title}"></div>
+            
+             <div class="ele">
             <div class="title">${title}</div>
 
             <div class="details">
@@ -80,28 +82,28 @@ function getTrailer(url){
 
             </div>
 
-            <div class="movie-data">
-
-            <div class="trailer">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/${trailer_key}?loop=1&showinfo=0&modestbranding=0" 
-                title="${title}" frameborder="0"
-                allowfullscreen></iframe>
-            </div>
+        </div>
+        </div>
+            <div class="sec-info">
 
             <div class="overview">
 
                 <h1>Overview :</h1>
                 <p>${overview1}</p>
             </div>
-
             </div>
 
-            
-        </div>
-        <div class="other">
-                <div class="poster"><img src="${IMG_URL+poster_path1}" alt="${title}"></div>
 
-        </div>
+    </div>
+
+    <div class="trailer">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/${trailer_url}?loop=1" 
+        title="${title}" frameborder="0"
+        allowfullscreen></iframe>
+    </div>
+        
+
+</div>
     `
     })
 }

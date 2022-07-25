@@ -24,53 +24,62 @@
             </div>
         </div>
 
-    <div class="container-main" id="change">
-        <div class="info">
-              
-            
+<div class="container-main" id="change">
 
-            <div class="title">Thor : Love and Thunder</div>
+        
+    <div class="info">
+            
+        <div class="pri-info">
+
+            <div class="poster"><img src="/Images and Videos/tmovie1.jpg" alt="${title}"></div>
+            
+             <div class="ele">
+            <div class="title">${title}</div>
 
             <div class="details">
 
-                <div class="runtime">Runtime : 86 mins</div>
+                <div class="runtime">Runtime : ${runtime1}</div>
                 <div class="imbd-rating">
 
-                    <span class="imdbRatingPlugin" data-user="ur117132477" data-title="tt11743610" data-style="p1">
-                    <a href="https://www.imdb.com/title/tt11743610/?ref_=plg_rt_1"><img src="https://ia.media-imdb.com/images/G/01/imdb/plugins/rating/images/imdb_46x22.png" alt=""/></a>
+                    <span class="imdbRatingPlugin" data-user="ur117132477" data-title="${imdb_id}" data-style="p1">
+                    <a href="https://www.imdb.com/title/${imdb_id}/?ref_=plg_rt_1"><img src="https://ia.media-imdb.com/images/G/01/imdb/plugins/rating/images/imdb_46x22.png" alt=""/></a>
                     </span>
 
                 </div>
-                <div class="release">Release Date : 22/06/2022</div>
+                <div class="release">Release Date : ${release_date} </div>
 
             </div>
 
-            <div class="movie-data">
-
-            <div class="trailer">
-                <iframe width="100%" height="100%" src="https://www.youtube.com/embed/Go8nTmfrQd8?loop=1&showinfo=0&modestbranding=0&controls=0" 
-                title="Thor: Love and Thunder" frameborder="0"
-                allowfullscreen></iframe>
-            </div>
+        </div>
+        </div>
+        <div class="sec-info">
 
             <div class="overview">
 
                 <h1>Overview :</h1>
-                <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Vitae iste nemo dicta. Eligendi veniam ducimus suscipit, nesciunt asperiores aliquam, quas, deleniti aspernatur culpa nemo sapiente debitis? Velit doloremque labore vel. Lorem ipsum dolor sit amet consectetur, adipisicing elit. Suscipit, cumque? Aut et consectetur expedita voluptates dolor cupiditate praesentium ab repellendus provident accusantium aspernatur quod temporibus laborum debitis saepe ut excepturi vero maxime iure doloremque odit odio, itaque nemo quo! Quod ratione perspiciatis facilis ad libero dignissimos quam aspernatur dicta nesciunt?</p>
+                <p>${overview1}</p>
             </div>
-
-            </div>
-
-            
         </div>
-        <div class="other">
-                <div class="poster"><img src="/poster.jpg" alt="${title}"></div>
 
-        </div>
+
     </div>
+  
+
+    <div class="trailer">
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/b391hapRbL4?loop=1&showinfo=0&modestbranding=0" 
+        title="${title}" frameborder="0"
+        allowfullscreen></iframe>
+    </div>
+        
+
 </div>
 
 
+
+
+
+
+</div>
 </body>
 
 
