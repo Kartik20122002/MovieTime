@@ -85,7 +85,6 @@
 
 .details{
     display: flex;
-    flex-wrap: wrap;
     text-align: center;
     justify-content: space-around;
     font-size: large;
@@ -103,4 +102,40 @@
 .trailer{
     width: 32rem;
     height: 18rem;
+}
+
+@media (max-width:1393px) {
+    html{
+        font-size : 80%;
+    }
+}
+@media (max-width:876px) {
+    html{
+        font-size : 70%;
+    }
+}
+
+@media (max-width:855px) {
+    .html{
+        font-size: 100%;
+    }
+    .details{
+        font-size: 2rem;
+    }
+    .container-main{
+        flex-direction: column;
+    }
+    .overview{
+        font-size: 1.5rem;
+    }
+    .trailer{
+        margin: 1rem;
+        max-width: 32rem;
+    }
+}
+
+@media (max-width:500px) {
+    .details{
+        flex-direction: column;
+    }
 }
