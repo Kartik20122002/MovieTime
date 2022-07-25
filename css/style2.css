@@ -7,6 +7,10 @@
     text-decoration: none;
 }
 
+.html{
+    background-color:#181a1b;
+}
+
 .container-body {
     max-height: 100vh;
 }
