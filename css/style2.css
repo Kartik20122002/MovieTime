@@ -45,6 +45,10 @@ html{
     font-size: 2rem;
 }
 
+.back a:hover i{
+    color: green;
+}
+
 .container-main{
     display: flex;
     width: 100%;
