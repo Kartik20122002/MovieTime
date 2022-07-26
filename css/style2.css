@@ -7,6 +7,14 @@
     text-decoration: none;
 }
 
+
+body::-webkit-scrollbar{
+    display: none;
+}
+html{
+    scrollbar-width: none;
+}
+
 html{
     background-color:#181a1b;
 }

@@ -3,6 +3,13 @@
     --green: #61f300;
 }
 
+body::-webkit-scrollbar{
+    display: none;
+}
+html{
+    scrollbar-width: none;
+}
+
 * {
     font-family: 'Nunito', sans-serif;
     margin: 0;
