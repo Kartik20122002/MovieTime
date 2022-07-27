@@ -116,7 +116,6 @@ form.addEventListener('submit', (e) => {
     document.getElementById('playingnow').remove();
     document.getElementById('upcoming').remove();
     document.getElementById('home').remove();
-    document.getElementById('book').remove();
     document.getElementById('services').remove();
     document.getElementById('contact').remove();
 
