@@ -67,9 +67,11 @@ function show(data){
      fetch(`https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=e272f317f8df98d65d0f955c6dc2b70d`
     ).then(res=>res.json()).then(data6 =>{
     
-    console.log(data6.results.IN.flatrate[0].provider_name);
 
-    let provider = data6.results.IN.flatrate[0].provider_name;
+    if(data6.results.IN) console.log(data6.results.IN.flatrate[0].provider_name);
+    let provider;
+    if(data6.results.IN) provider = data6.results.IN.flatrate[0].provider_name;
+    else provider = 'None';
    
             
         let trailer_url = data5.videoId;
