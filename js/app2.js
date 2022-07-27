@@ -51,11 +51,26 @@ function show(data){
 
     const trailer =`https://imdb-api.com/en/API/YouTubeTrailer/k_rldl3rxl/${imdb_id}`;
 
+    let providers;
+
+    
+    
+    
     
     getTrailer(trailer);
+
     function getTrailer(url){
         
         fetch(url).then(res => res.json()).then(data5 =>{
+
+           
+     fetch(`https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=e272f317f8df98d65d0f955c6dc2b70d`
+    ).then(res=>res.json()).then(data6 =>{
+    
+    console.log(data6.results.IN.flatrate[0].provider_name);
+
+    let provider = data6.results.IN.flatrate[0].provider_name;
+   
             
         let trailer_url = data5.videoId;
         main.innerHTML=`
@@ -79,6 +94,9 @@ function show(data){
 
                 </div>
                 <div class="release">Release Date : ${release_date} </div>
+                <div class="release">Watch Provider : ${provider} </div>
+
+                
 
             </div>
 
@@ -105,6 +123,8 @@ function show(data){
 
 </div>
     `
+
+})
     })
 }
 
