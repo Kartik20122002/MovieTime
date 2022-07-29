@@ -18,7 +18,10 @@
 #initial{
    width: 10rem;
    margin: auto;
+   transition: 30s;
+   transform: rotate(36000deg);
 }
+
 
 body::-webkit-scrollbar{
     display: none;
