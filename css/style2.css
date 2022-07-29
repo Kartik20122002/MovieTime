@@ -7,6 +7,18 @@
     text-decoration: none;
 }
 
+.loding{
+    position: absolute;
+    top: 50vh;
+    margin: auto;
+    font-size: 5rem;
+    text-align: center;
+}
+
+#initial{
+   width: 10rem;
+   margin: auto;
+}
 
 body::-webkit-scrollbar{
     display: none;
