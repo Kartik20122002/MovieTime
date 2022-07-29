@@ -119,7 +119,13 @@ html{
     font-size: large;
     align-items: center;
 }
-.runtime,.imbd-rating,.release{
+.runtime{
+    margin: 1rem;
+}
+.imbd-rating{
+    margin: 1rem;
+}
+.release{
     margin: 1rem;
 }
 

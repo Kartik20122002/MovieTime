@@ -204,7 +204,7 @@ header .search-bar-container label:hover {
 
 .login-form-container {
     position: fixed;
-    top: -120%;
+    top: 0;
     left: 0;
     z-index: 1010;
     min-height: 100vh;
@@ -213,9 +213,11 @@ header .search-bar-container label:hover {
     display: flex;
     align-items: center;
     justify-content: center;
+    transform: scale(0);
 }
 
 .login-form-container.active {
+    transform: scale(1);
     top: 0;
 }
 
