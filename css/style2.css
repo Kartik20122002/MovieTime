@@ -18,8 +18,6 @@
 #initial{
    width: 10rem;
    margin: auto;
-   transition: 30s;
-   transform: rotate(36000deg);
 }
 
 
@@ -120,6 +118,9 @@ html{
     justify-content: space-around;
     font-size: large;
     align-items: center;
+}
+.runtime,.imbd-rating,.release{
+    margin: 1rem;
 }
 
 .sec-info{
