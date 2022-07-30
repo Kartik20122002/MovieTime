@@ -25,78 +25,83 @@ let infoURL  =  'https://api.themoviedb.org/3/movie/' + movieid + '?api_key=e272
 
 getMovies(infoURL);
 
-function getMovies(url){
+async function getvideo(API_KEY,id){
+    let res = await fetch(`https://api.themoviedb.org/3/movie/${id}/videos?api_key=${API_KEY}`);
+    let data = await res.json();
+    return data;
+}
 
+function getMovies(url){
     fetch(url).then(res => res.json()).then(data4 =>{
         // console.log(data4);
         show(data4);
     })
 }
 
-function show(data){
-    const {title,overview,release_date,runtime,poster_path,imdb_id,id} = data;
+async function show(data){
+    console.log(data);
+    const {genres,tagline,original_title,vote_average,title,overview,release_date,runtime,poster_path,imdb_id,id} = data;
 
+    let title1 = title;
     let overview1 = overview;
     let runtime1 = runtime;
     let poster_path1 = poster_path;
     let id1 = id;
 
+    let video = await getvideo('e272f317f8df98d65d0f955c6dc2b70d',id).then(res=>{ console.log(res);
+         if(res.results.length){
+        for(let i=0 ; i < res.results.length ; i++){
+              if(res.results[i].type == "Trailer") return res.results[i].key;
+        }
+     return res.results[0].key
+    }
+    else return "NO TRAILER AVAILABLE";
+    });
+    
+
     if(!id1) id1 = 550;
+    if(original_title != title) title1 = `${title} (${original_title})`;
     if(!overview1) overview1 = 'No Overview Avialabele.'
     if(!runtime1) runtime1 = 'N/A';
     else runtime1 = runtime + ' mins';
 
     let main = document.querySelector('#change');
-
-
-    const trailer =`https://imdb-api.com/en/API/YouTubeTrailer/k_rldl3rxl/${imdb_id}`;
-
-    let providers;
-
     
-    
-    
-    
-    getTrailer(trailer);
-
-    function getTrailer(url){
-        
-        fetch(url).then(res => res.json()).then(data5 =>{
+    // swPhyd0g6K8
 
            
-     fetch(`https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=e272f317f8df98d65d0f955c6dc2b70d`
-    ).then(res=>res.json()).then(data6 =>{
+     fetch(`https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=e272f317f8df98d65d0f955c6dc2b70d`).then(res=>res.json()).then(data6 =>{
     
 
-    if(data6.results.IN) console.log(data6.results.IN.flatrate[0].provider_name);
+    if(data6.results.IN) console.log(data6.results.IN.flatrate);
     let provider;
+    let provider_logo;
     if(data6.results.IN) provider = data6.results.IN.flatrate[0].provider_name;
     else provider = 'None';
-   
+    if(data6.results.IN) provider_logo = data6.results.IN.flatrate[0].logo_path;
             
-        let trailer_url = data5.videoId;
         main.innerHTML=`
         <div class="info">
             
         <div class="pri-info">
 
-            <div class="poster"><img src="${IMG_URL+ poster_path1}" alt="${title}"></div>
+            <div class="poster"><img src="${IMG_URL+ poster_path1}" alt="${title1}"></div>
             
              <div class="ele">
-            <div class="title">${title}</div>
+            <div class="title">${title1}</div>
+
+            <div class="tagline">${tagline}</div>
 
             <div class="details">
 
                 <div class="runtime">Runtime : ${runtime1}</div>
-                <div class="imbd-rating">
-
-                    <span class="imdbRatingPlugin" data-user="ur117132477" data-title="${imdb_id}" data-style="p1">
-                    <a href="https://www.imdb.com/title/${imdb_id}/?ref_=plg_rt_1"><img src="https://ia.media-imdb.com/images/G/01/imdb/plugins/rating/images/imdb_46x22.png" alt=""/></a>
-                    </span>
-
-                </div>
+                <div class="imbd-rating">Average Votes : ${vote_average}</div>
                 <div class="release">Release Date : ${release_date} </div>
-                <div class="release">Watch Provider : ${provider} </div>
+                <div class="release">Watch Provider :
+                <div class="provide">
+                 <img src="${IMG_URL+ provider_logo}" alt="${title1}"> ${provider} 
+                 </div>
+                </div>
 
                 
 
@@ -117,7 +122,7 @@ function show(data){
     </div>
 
     <div class="trailer">
-        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/${trailer_url}?loop=1" 
+        <iframe width="100%" height="100%" src="https://www.youtube.com/embed/${video}?loop=1" 
         title="${title}" frameborder="0"
         allowfullscreen></iframe>
     </div>
@@ -127,8 +132,7 @@ function show(data){
     `
 
 })
-    })
-}
+    
 
 
   
