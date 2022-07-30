@@ -99,7 +99,7 @@ async function show(data){
                 <div class="release">Release Date : ${release_date} </div>
                 <div class="release">Watch Provider :
                 <div class="provide">
-                 <img src="${IMG_URL+ provider_logo}" alt="${title1}"> ${provider} 
+                 <img src="${IMG_URL+ provider_logo}" alt=""> ${provider} 
                  </div>
                 </div>
 
