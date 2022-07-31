@@ -131,3 +131,101 @@ form.addEventListener('submit', (e) => {
     }
 
 })
+
+// *********************************************************************************************************************
+
+const api = 'e272f317f8df98d65d0f955c6dc2b70d';
+let forml = document.getElementById('forml');
+
+console.log(forml);
+// 
+let userdata= {
+  unique_key : "404",
+  username : "Guest"
+};
+
+const get_login = async (username,password,token)=>{
+  const options2 = {
+    method: 'POST'
+  };
+
+  await fetch(`https://api.themoviedb.org/3/authentication/token/validate_with_login?api_key=e272f317f8df98d65d0f955c6dc2b70d&username=${username}&password=${password}&request_token=${token}`, options2)
+  const res1 = await fetch(`https://api.themoviedb.org/3/authentication/session/new?api_key=e272f317f8df98d65d0f955c6dc2b70d&request_token=${token}`)
+
+  const data = await res1.json();
+
+  if(data.success) return data.session_id;
+  else{ 
+    userdata.username = "Guest";
+    return "404";
+  }
+  }
+
+
+const get_token = async ()=>{
+  const res = await fetch('https://api.themoviedb.org/3/authentication/token/new?api_key=e272f317f8df98d65d0f955c6dc2b70d');
+  const data = await res.json();
+  return data.request_token;
+    }
+
+const signin = async ()=>{
+
+    let token = await get_token();
+    console.log(`token : ${token}`);
+    let user = document.getElementById('user1');
+    let pass = document.getElementById('pass1');
+  
+  
+      let username = user.value;
+      let password = pass.value;
+      
+      userdata.username = username;
+    
+    let id = await get_login(username,password,token);
+    return id;
+    
+  }
+
+  
+
+  forml.addEventListener('submit',  async (e) => {  //login form;
+    e.preventDefault();
+    console.log("Submitted");
+    let session_id = await signin();
+    console.log(`session_id : ${session_id}`);
+    userdata.unique_key=session_id;
+    console.log(userdata);
+  })
+
+  const IsSign = ()=>{
+    console.log(userdata);
+  }
+
+  const signuppage = (token)=>{
+    let link = `https://www.themoviedb.org/authenticate/${token}?redirect_to=http://127.0.0.1:5500/tjr.html`;
+    location = link;
+  }
+  
+  const signup = async ()=>{
+      let token = await get_token();
+      signuppage(token);
+    }
+
+  const signout = async () =>{
+    const options = {
+      method: 'DELETE',
+      headers: {
+        Authorization: 'OAuth oauth_consumer_key="", oauth_nonce="xJjDoJoHvF9SVLRULXfky7k9qZtsRtBO", oauth_signature="zWKBljf%2BTkqhmJQOUKJHxchmXYI%3D", oauth_signature_method="HMAC-SHA1", oauth_timestamp="1659257967", oauth_token="", oauth_version="1.0"'
+      }
+    };
+
+    
+    fetch(`https://api.themoviedb.org/3/authentication/session?api_key=${api}&session_id=${userdata.unique_key}`, options)
+    .then(response => response.json())
+    .then(response => console.log(response))
+    .catch(err => console.error(err));
+    
+    userdata.unique_key = "";
+    userdata.username = "Guest";
+
+  }
