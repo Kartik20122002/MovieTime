@@ -137,7 +137,7 @@ let forml = document.getElementById('forml');
 
 // 
 let userdata= {
-  unique_key : "404",
+  unique_key : "",
   username : "Guest"
 };
 
@@ -154,7 +154,7 @@ const get_login = async (username,password,token)=>{
   if(data.success) return data.session_id;
   else{ 
     userdata.username = "Guest";
-    return "404";
+    return "";
   }
   }
 
