@@ -59,7 +59,6 @@ function getMovies(url, ids, n) {
     fetch(url).then(res => res.json()).then(data => {
         let c;
         const result = data.results;
-        console.log(result);
           c =result;
         const main = document.getElementById(ids.id)
         main.innerHTML=' ';
@@ -86,7 +85,6 @@ function getMovies(url, ids, n) {
             let cl = document.getElementById(`${ids.id}${i+1}`);
 
             cl.addEventListener('click',()=>{
-                // console.log(id);
                        localStorage.setItem('key1',id);
             })
             
@@ -137,7 +135,6 @@ form.addEventListener('submit', (e) => {
 const api = 'e272f317f8df98d65d0f955c6dc2b70d';
 let forml = document.getElementById('forml');
 
-console.log(forml);
 // 
 let userdata= {
   unique_key : "404",
@@ -171,7 +168,6 @@ const get_token = async ()=>{
 const signin = async ()=>{
 
     let token = await get_token();
-    console.log(`token : ${token}`);
     let user = document.getElementById('user1');
     let pass = document.getElementById('pass1');
   
@@ -190,11 +186,8 @@ const signin = async ()=>{
 
   forml.addEventListener('submit',  async (e) => {  //login form;
     e.preventDefault();
-    console.log("Submitted");
     let session_id = await signin();
-    console.log(`session_id : ${session_id}`);
     userdata.unique_key=session_id;
-    console.log(userdata);
   })
 
   const IsSign = ()=>{
