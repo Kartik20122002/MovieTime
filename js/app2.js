@@ -1,16 +1,3 @@
-
-(function(d, s, id) {
-    var js, stags = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) {
-        return;
-    }
-    js = d.createElement(s);
-    js.id = id;
-    js.src = "https://ia.media-imdb.com/images/G/01/imdb/plugins/rating/js/rating.js";
-    stags.parentNode.insertBefore(js, stags);
-})(document, "script", "imdb-rating-api");
-
-
 const API_KEY = 'api_key=e272f317f8df98d65d0f955c6dc2b70d';
 const Imbd_api = 'k_rldl3rxl';
 const BASE_URL = 'https://api.themoviedb.org/3';

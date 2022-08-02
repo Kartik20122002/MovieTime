@@ -69,7 +69,7 @@ html{
 }
 
 .back a:hover i{
-    color: green;
+    color: rgb(0, 174, 238);
 }
 
 .container-main{
@@ -106,7 +106,7 @@ html{
 }
 
 .poster:hover img{
-    transform: rotate3d(0, 2, 1,360deg);
+    transform: rotate3d(0, 1, 0,180deg);
 }
 
 .ele{
@@ -119,10 +119,21 @@ html{
     width: 100%;
 }
 
+.title:hover{
+    transform: scale(1.1);
+    padding-left: 1.1rem;
+}
+
 .tagline{
     margin: 0 1rem 1rem 1rem;
     font-size: 1.5rem;
     color: #ffffff54;
+}
+
+.tagline:hover{
+    color: rgb(6, 126, 177);
+    transform: scale(1.1);
+    padding-left: 1rem;
 }
 
 .details{

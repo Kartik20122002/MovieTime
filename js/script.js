@@ -122,7 +122,7 @@ form.addEventListener('submit', (e) => {
     const searchTerm = search.value;
     heading.innerHTML = `<span>Results found on ${searchTerm} : </span>`;
 
-
+    console.log(searchTerm);
 
     if (searchTerm) {
         getMovies(searchURL + searchTerm, tmovies, 20);
